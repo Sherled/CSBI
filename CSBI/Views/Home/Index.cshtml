@@ -1,0 +1,18 @@
+﻿@model IEnumerable<CSBI.Data.Model.Task>
+<div class="col-10 custom-col-content" style="text-align: center; margin: auto; color:#fff">
+    <div style="display:grid">
+        <a class="a-custom-standart" style="font-size: 2rem;" asp-action="TasksOfTime">Задачи с истекающим сроком окончания</a>
+    </div>
+    <table class="table" style="color:black;margin-top: 2rem;">
+        <tr><th>Задача</th><th>Дата и время начала </th><th>Дата и время окончания</th><th>Статус активности</th><th></th></tr>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@task.Name</td>
+                <td>@task.Start</td>
+                <td>@task.End</td>
+                <td>@task.Status.Name</td>
+            </tr>
+        }
+    </table>
+</div>
